@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number system converter</title>
+    <style>
+       body{ background-color:rgb(85, 109, 109);
+        font-family:verdana;
+        text-align:centre;
+        color: rgb(255, 255, 255);
+        padding-left: 20px;
+
+
+
+       }
+
+       header h2{ 
+        text-align: center;
+       }
+       .inputField{
+        padding-left: 20px;
+
+       }
+       button{
+        color:rgb(201, 2, 2);
+
+        padding: 5px;
+
+        border-radius: 10%;
+
+
+
+
+       }
+
+    </style>
+</head>
+
+<body >
+
+
+
+    <h3></h2>
+    <h3></h2>
+    <header>
+        <h2>Number System Converter</h2>
+    </header>
+    <section class="inputField">
+        <label for="Value">Enter your value:</label>
+        <input type="text" name="Value" id="Value" class="input">
+        <select id="inputBase">
+
+            <option value="10">decimal</option>
+          
+            <option value="8">octalDecimal</option>
+          
+            <option value="16">hexiDecimal</option>
+
+
+            <option value="2">Binary</option>
+          
+          </select>
+          <section>
+            <button onclick="convert()">convert</button>
+          </section>
+          
+
+        
+       
+    </section>
+    <section>
+        <h2>Conversion Results</h2>
+        <p>Binary: <span id="binary"></span></p>
+        <p>Octal: <span id="octal"></span></p>
+        <p>Decimal: <span id="decimal"></span></p>
+        <p>Hexadecimal: <span id="hexadecimal"></span></p>
+
+    </section>
+
+   
+    
+    
+    
+    
+    
+    </section>
+    <script>
+       function convert() {
+            // Get the input number and base
+            const number = document.getElementById("Value").value;
+            const inputBase = parseInt(document.getElementById("inputBase").value);
+
+            // Parse the number to the base
+            const parsedNumber = parseInt(number, inputBase);
+
+            // Display the converted numbers in different bases
+            document.getElementById("binary").textContent = parsedNumber.toString(2);
+            document.getElementById("octal").textContent = parsedNumber.toString(8);
+            document.getElementById("decimal").textContent = parsedNumber.toString(10);
+            document.getElementById("hexadecimal").textContent = parsedNumber.toString(16).toUpperCase();
+        }
+
+
+
+    
+        
+    </script>
+</body>
+</html>
